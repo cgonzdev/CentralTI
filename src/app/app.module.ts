@@ -5,10 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { AuthModule } from './pages/auth/auth.module';
+import { FlowBoardModule } from './pages/flowboard/flowboard.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, AuthModule],
+  imports: [BrowserModule, AppRoutingModule, AuthModule, FlowBoardModule],
   providers: [],
   bootstrap: [AppComponent],
 })

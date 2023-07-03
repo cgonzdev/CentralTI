@@ -7,6 +7,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./pages/auth/auth.module').then((m) => m.AuthModule),
   },
+  {
+    path: 'flowboard',
+    loadChildren: () =>
+      import('./pages/flowboard/flowboard.module').then(
+        (m) => m.FlowBoardModule
+      ),
+  },
 ];
 
 @NgModule({
