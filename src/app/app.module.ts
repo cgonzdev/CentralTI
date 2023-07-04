@@ -6,11 +6,10 @@ import { AppComponent } from './app.component';
 
 import { AuthModule } from './pages/auth/auth.module';
 import { FlowBoardModule } from './pages/flowboard/flowboard.module';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, AuthModule, FlowBoardModule, FontAwesomeModule],
+  imports: [BrowserModule, AppRoutingModule, AuthModule, FlowBoardModule],
   providers: [],
   bootstrap: [AppComponent],
 })
