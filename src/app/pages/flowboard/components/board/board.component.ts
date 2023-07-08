@@ -4,6 +4,9 @@ import {
   moveItemInArray,
   transferArrayItem,
 } from '@angular/cdk/drag-drop';
+import { Dialog } from '@angular/cdk/dialog';
+
+import { TaskDialogComponent } from '../task-dialog/task-dialog.component';
 
 import { Column, Task } from '../../models/task.model';
 
@@ -47,6 +50,8 @@ export class BoardComponent {
     },
   ];
 
+  constructor(private dialog: Dialog) {}
+
   drop(event: CdkDragDrop<Task[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(
@@ -66,5 +71,17 @@ export class BoardComponent {
 
   addColumn() {
     this.columns.push({ title: 'new column', tasks: [] });
+  }
+
+  openTask(task: Task) {
+    const dialogRef = this.dialog.open(TaskDialogComponent, {
+      minWidth: '300px',
+      maxWidth: '70%',
+      data: task,
+    });
+
+    dialogRef.closed.subscribe((output) => {
+      console.log(output);
+    });
   }
 }
