@@ -44,3 +44,12 @@ Thumbs.db
 
 # Own
 src/assets
+
+# Firebase
+.firebase
+*-debug.log
+.runtimeconfig.json
+
+# environment variables file
+src/environments/*
+!src/environments/environment.example.ts

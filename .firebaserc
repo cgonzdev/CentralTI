@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "css-centralized": {
+      "hosting": {
+        "CentralTI": [
+          "css-centralized"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "css-centralized"
+  }
+}
