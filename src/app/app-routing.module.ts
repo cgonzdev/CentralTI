@@ -14,6 +14,13 @@ const routes: Routes = [
         (m) => m.FlowBoardModule
       ),
   },
+  {
+    path: 'templates',
+    loadChildren: () =>
+      import('./pages/templates/templates.module').then(
+        (m) => m.TemplatesModule
+      ),
+  },
 ];
 
 @NgModule({

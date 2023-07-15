@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthModule } from './pages/auth/auth.module';
 import { FlowBoardModule } from './pages/flowboard/flowboard.module';
+import { TemplatesModule } from './pages/templates/templates.module';
 
 import { environment } from '../environments/environment';
 
@@ -18,6 +19,7 @@ import { environment } from '../environments/environment';
     AppRoutingModule,
     AuthModule,
     FlowBoardModule,
+    TemplatesModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
