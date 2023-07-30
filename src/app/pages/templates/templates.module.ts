@@ -23,5 +23,6 @@ import { TerminalComponent } from './components/terminal/terminal.component';
     TerminalModule,
     FontAwesomeModule,
   ],
+  exports: [DataCardComponent],
 })
 export class TemplatesModule {}

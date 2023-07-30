@@ -21,6 +21,11 @@ const routes: Routes = [
         (m) => m.TemplatesModule
       ),
   },
+  {
+    path: 'tools',
+    loadChildren: () =>
+      import('./pages/tools/tools.module').then((m) => m.ToolsModule),
+  },
 ];
 
 @NgModule({

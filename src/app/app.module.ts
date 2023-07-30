@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { AuthModule } from './pages/auth/auth.module';
 import { FlowBoardModule } from './pages/flowboard/flowboard.module';
 import { TemplatesModule } from './pages/templates/templates.module';
+import { ToolsModule } from './pages/tools/tools.module';
 
 import { environment } from '../environments/environment';
 
@@ -20,6 +21,7 @@ import { environment } from '../environments/environment';
     AuthModule,
     FlowBoardModule,
     TemplatesModule,
+    ToolsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
