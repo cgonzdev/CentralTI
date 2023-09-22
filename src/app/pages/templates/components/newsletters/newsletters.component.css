@@ -1,0 +1,115 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background: white;
+  color: #024959
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #3366CC;
+}
+
+.container {
+  font-family: 'Work Sans', sans-serif;
+  margin: 10px;
+  padding: 15px;
+  border-radius: 5px;
+  border: 2px solid #024959;
+  color: inherit;
+}
+
+.header {
+  margin: 30px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.titlebox{
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+}
+
+.title {
+  margin: 0;
+  padding: 0;
+  color: #024959
+}
+
+.powered {
+  font-weight: 600;
+  font-style: italic;
+  font-size: 10px;
+  color: gray;
+}
+
+.owner {
+  color: #E20B8D;
+}
+
+.fingerprint {
+  padding: 0 10px;
+  transform: rotate(25deg);
+}
+
+.subtitle{
+  font-weight: bold;
+  font-size: 16px;
+  font-style: oblique;
+  color: #024959
+}
+
+.article {
+  display: block;
+  margin: 20px 0;
+}
+
+.nltitle {
+  margin: 25px 10px;
+  font-weight: bold;
+  font-size: 20px;
+  color: #024959
+}
+
+.list {
+  list-style: circle outside;
+}
+
+.footer {
+  position: relative;
+  max-width: 100vw;
+  min-height: 100px;
+  padding: 15px;
+  margin-top: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-image: url(/assets/image/logo/bg-footer.svg);
+}
+
+.footer {
+  margin: 0;
+}
+
+.footer > span {
+  margin-top: 10px;
+  color: white;
+}
+
+.footer > .img {
+  position: absolute;
+  padding: 20px;
+  right: 0;
+  bottom: 0;
+}
+
+.footer_contact {
+  position: absolute;
+  bottom: 15px;
+}
+
+.email_contact {
+  color: #b0f6fc;
+}

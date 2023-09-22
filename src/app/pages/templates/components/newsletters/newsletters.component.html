@@ -1,0 +1,29 @@
+<div class="container">
+  <header class="header">
+    <div class="flex">
+      <div class="titlebox">
+        <h1 class="title">{{ title }}</h1>
+        <span class="powered">Powered by <span class="owner">{{ owner }}</span></span>
+      </div>
+      <img loading="lazy" src="/assets/image/logo/fingerprint.svg" alt="fingerprint" class="fingerprint" width="80px">
+    </div>
+    <div class="logo">
+      <img loading="lazy" src="/assets/image/logo/newsletters_logo.svg" alt="Logo" width="230px">
+    </div>
+  </header>
+  <main class="main">
+    <div>
+      <p class="subtitle">{{ subtitle }}</p>
+    </div>
+    <article class="article" *ngFor="let notice of newsletters">
+      <span class="nltitle">{{ notice.category }}</span>
+      <ul class="list">
+        <li *ngFor="let news of notice.news"><a [href]="news.link" target="_blank">{{ news.title }}</a></li>
+      </ul>
+    </article>
+  </main>
+  <footer class="footer">
+    <span class="footer_contact">For more information, contact the following email: <strong><a [href]="'mailto:'+contact" class="email_contact">{{ contact }}</a></strong></span>
+    <img loading="lazy" src="/assets/image/logo/figures.svg" alt="tr" class="img" width="150px">
+  </footer>
+</div>

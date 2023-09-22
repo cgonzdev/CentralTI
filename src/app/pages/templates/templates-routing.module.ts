@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DataCardComponent } from './components/data-card/data-card.component';
 import { TableComponent } from './components/table/table.component';
 import { TerminalComponent } from './components/terminal/terminal.component';
+import { NewslettersComponent } from './components/newsletters/newsletters.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'terminal',
     component: TerminalComponent,
+  },
+  {
+    path: 'newsletters',
+    component: NewslettersComponent,
   },
 ];
 

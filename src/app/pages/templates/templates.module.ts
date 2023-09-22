@@ -11,9 +11,15 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DataCardComponent } from './components/data-card/data-card.component';
 import { TableComponent } from './components/table/table.component';
 import { TerminalComponent } from './components/terminal/terminal.component';
+import { NewslettersComponent } from './components/newsletters/newsletters.component';
 
 @NgModule({
-  declarations: [DataCardComponent, TableComponent, TerminalComponent],
+  declarations: [
+    DataCardComponent,
+    TableComponent,
+    TerminalComponent,
+    NewslettersComponent,
+  ],
   imports: [
     CommonModule,
     TemplatesRoutingModule,
