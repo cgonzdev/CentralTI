@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { newsletters } from '../../models/newsletters.model';
 
 @Component({
-  selector: 'app-newsletters',
+  selector: 'app-templates-newsletters',
   templateUrl: './newsletters.component.html',
   styleUrls: ['./newsletters.component.css'],
 })

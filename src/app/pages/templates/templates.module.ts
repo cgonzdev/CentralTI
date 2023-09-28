@@ -29,6 +29,6 @@ import { NewslettersComponent } from './components/newsletters/newsletters.compo
     TerminalModule,
     FontAwesomeModule,
   ],
-  exports: [DataCardComponent],
+  exports: [DataCardComponent, NewslettersComponent],
 })
 export class TemplatesModule {}
