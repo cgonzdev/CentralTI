@@ -30,7 +30,8 @@
     </form>
     <div class="card flex flex-wrap gap-3 mt-3 justify-content-start">
       <p-button (click)="addCategory()"  label="Add category" styleClass="p-button-outlined"></p-button>
-      <p-button (click)="previewNewsletter()" label="Preview" styleClass="p-button-outlined p-button-success"></p-button>
+      <p-button (click)="previewNewsletter()" label="Preview" styleClass="p-button-outlined p-button-help"></p-button>
+      <p-button (click)="send()" label="Send" styleClass="p-button-outlined p-button-success"></p-button>
     </div>
     <div class="preview" *ngIf="preview">
       <app-templates-newsletters [newsletters]="formGroup.value.categories"></app-templates-newsletters>

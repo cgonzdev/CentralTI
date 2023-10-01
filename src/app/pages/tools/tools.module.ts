@@ -6,6 +6,7 @@ import { TemplatesModule } from '../templates/templates.module';
 import { ToolsRoutingModule } from './tools-routing.module';
 import { GeneratorsComponent } from './components/generators/generators.component';
 import { NewslettersComponent } from './components/newsletters/newsletters.component';
+import { NewslettersHistoryComponent } from './components/newsletters/history/newsletters.historycomponent';
 
 import { CardModule } from 'primeng/card';
 import { FieldsetModule } from 'primeng/fieldset';
@@ -14,7 +15,11 @@ import { ButtonModule } from 'primeng/button';
 import { DividerModule } from 'primeng/divider';
 
 @NgModule({
-  declarations: [GeneratorsComponent, NewslettersComponent],
+  declarations: [
+    GeneratorsComponent,
+    NewslettersComponent,
+    NewslettersHistoryComponent,
+  ],
   imports: [
     CommonModule,
     ReactiveFormsModule,

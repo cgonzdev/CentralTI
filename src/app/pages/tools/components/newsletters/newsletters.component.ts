@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+import { NewslettersService } from '../../services/newsletters.service';
+
 @Component({
   selector: 'app-tools-newsletters',
   templateUrl: './newsletters.component.html',
@@ -12,7 +14,12 @@ export class NewslettersComponent implements OnInit {
   loading: boolean = true;
   urlPattern: RegExp = /^https?:\/\/[\w\-]+(\.[\w\-]+)+[\/#?]?.*$/;
 
-  constructor(private formBuilder: FormBuilder) {}
+  idNewsletter!: string;
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private newslettersService: NewslettersService
+  ) {}
 
   ngOnInit(): void {
     this.creatingForm();
@@ -77,5 +84,11 @@ export class NewslettersComponent implements OnInit {
 
   previewNewsletter() {
     this.preview = !this.preview;
+  }
+
+  async send() {
+    await this.newslettersService
+      .addNewsletter(this.formGroup.value)
+      .then((response) => (this.idNewsletter = response.id));
   }
 }

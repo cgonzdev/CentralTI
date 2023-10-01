@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { GeneratorsComponent } from './components/generators/generators.component';
 import { NewslettersComponent } from './components/newsletters/newsletters.component';
+import { NewslettersHistoryComponent } from './components/newsletters/history/newsletters.historycomponent';
 
 const routes: Routes = [
   {
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: 'newsletters',
     component: NewslettersComponent,
+  },
+  {
+    path: 'newsletters/history/:id',
+    component: NewslettersHistoryComponent,
   },
 ];
 
