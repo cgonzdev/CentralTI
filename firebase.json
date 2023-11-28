@@ -3,7 +3,18 @@
     {
       "target": "CentralTI",
       "source": ".",
-      "frameworksBackend": {}
+      "frameworksBackend": {},
+      "headers": [
+        {
+          "source": "**",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
