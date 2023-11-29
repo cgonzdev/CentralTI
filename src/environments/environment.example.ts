@@ -8,4 +8,8 @@ export const environment = {
     messagingSenderId: '<messagingSenderId>',
     measurementId: '<measurementId>',
   },
+  application: {
+    name: 'application name',
+    description: 'application description',
+  },
 };
