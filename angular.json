@@ -84,10 +84,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "CentralTI:build:production"
+              "buildTarget": "CentralTI:build:production"
             },
             "development": {
-              "browserTarget": "CentralTI:build:development"
+              "buildTarget": "CentralTI:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -95,7 +95,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "CentralTI:build"
+            "buildTarget": "CentralTI:build"
           }
         },
         "test": {
