@@ -1,40 +1,48 @@
-<div class="container" *ngIf="!loading">
-  <p-card>
-    <form [formGroup]="formGroup">
-      <div formArrayName="categories" *ngFor="let category of CategoriesField.controls; let i = index;">
-        <div [formGroupName]="i">
-          <div class="flex flex-column gap-2 m-2">
-            <label [htmlFor]="'category' + i">Category</label>
-            <input [id]="'category' + i" type="text" pInputText formControlName="category"/>
-          </div>
-          <p-fieldset [legend]="Values[i].category" [toggleable]="true">
-            <div formArrayName="news" *ngFor="let item of getNewsField(i).controls; let j = index;">
-              <div [formGroupName]="j">
-                <div class="flex flex-column gap-2 m-2">
-                  <label [htmlFor]="'title' + j">Title</label>
-                  <input [id]="'title' + j" type="text" pInputText formControlName="title"/>
-                </div>
-                <div class="flex flex-column gap-2 m-2">
-                  <label [htmlFor]="'link' + j">Link</label>
-                  <input [id]="'link' + j" type="text" pInputText formControlName="link"/>
-                </div>
-                <p-divider></p-divider>
+@if (!loading) {
+  <div class="container">
+    <p-card>
+      <form [formGroup]="formGroup">
+        @for (category of CategoriesField.controls; track category; let i = $index) {
+          <div formArrayName="categories">
+            <div [formGroupName]="i">
+              <div class="flex flex-column gap-2 m-2">
+                <label [htmlFor]="'category' + i">Category</label>
+                <input [id]="'category' + i" type="text" pInputText formControlName="category"/>
               </div>
+              <p-fieldset [legend]="Values[i].category" [toggleable]="true">
+                @for (item of getNewsField(i).controls; track item; let j = $index) {
+                  <div formArrayName="news">
+                    <div [formGroupName]="j">
+                      <div class="flex flex-column gap-2 m-2">
+                        <label [htmlFor]="'title' + j">Title</label>
+                        <input [id]="'title' + j" type="text" pInputText formControlName="title"/>
+                      </div>
+                      <div class="flex flex-column gap-2 m-2">
+                        <label [htmlFor]="'link' + j">Link</label>
+                        <input [id]="'link' + j" type="text" pInputText formControlName="link"/>
+                      </div>
+                      <p-divider></p-divider>
+                    </div>
+                  </div>
+                }
+                <div class="card flex flex-wrap gap-3 mt-3 justify-content-start">
+                  <p-button (click)="addNew(i)"  label="Add field" styleClass="p-button-outlined"></p-button>
+                </div>
+              </p-fieldset>
             </div>
-            <div class="card flex flex-wrap gap-3 mt-3 justify-content-start">
-              <p-button (click)="addNew(i)"  label="Add field" styleClass="p-button-outlined"></p-button>
-            </div>
-          </p-fieldset>
-        </div>
+          </div>
+        }
+      </form>
+      <div class="card flex flex-wrap gap-3 mt-3 justify-content-start">
+        <p-button (click)="addCategory()"  label="Add category" styleClass="p-button-outlined"></p-button>
+        <p-button (click)="previewNewsletter()" label="Preview" styleClass="p-button-outlined p-button-help"></p-button>
+        <p-button (click)="send()" label="Send" styleClass="p-button-outlined p-button-success"></p-button>
       </div>
-    </form>
-    <div class="card flex flex-wrap gap-3 mt-3 justify-content-start">
-      <p-button (click)="addCategory()"  label="Add category" styleClass="p-button-outlined"></p-button>
-      <p-button (click)="previewNewsletter()" label="Preview" styleClass="p-button-outlined p-button-help"></p-button>
-      <p-button (click)="send()" label="Send" styleClass="p-button-outlined p-button-success"></p-button>
-    </div>
-    <div class="preview" *ngIf="preview">
-      <app-templates-newsletters [newsletters]="formGroup.value.categories"></app-templates-newsletters>
-    </div>
-  </p-card>
-</div>
+      @if (preview) {
+        <div class="preview">
+          <app-templates-newsletters [newsletters]="formGroup.value.categories"></app-templates-newsletters>
+        </div>
+      }
+    </p-card>
+  </div>
+}
