@@ -8,42 +8,69 @@ import { newsletters } from '../../models/newsletters.model';
 })
 export class NewslettersComponent {
   title: string = 'newsletters';
-  subtitle: string = 'subtitle';
+  subtitle: string =
+    'Dive into the world of cybersecurity with our daily newsletter. Stay informed on the latest malware notices and emerging threats. Your shortcut to staying secure in the digital age.';
 
   owner: string = 'owner';
   contact: string = 'contact@email.com';
 
   @Input() newsletters: newsletters[] = [
     {
-      category: 'category',
+      category: 'Malware',
       news: [
         {
-          title: 'title',
+          title:
+            'Unveiling the Threat Landscape: A Deep Dive into Emerging Malware Trends',
           link: 'https://example.com',
         },
         {
-          title: 'title',
+          title:
+            'Defending the Digital Realm: A Guide to Recognizing and Neutralizing Malicious Software',
           link: 'https://example.com',
         },
         {
-          title: 'title',
+          title:
+            'Malware Unmasked: Exploring Advanced Threats and Countermeasures',
           link: 'https://example.com',
         },
       ],
     },
     {
-      category: 'category',
+      category: 'Ransomware',
       news: [
         {
-          title: 'title',
+          title:
+            'Ransomware Warfare: Understanding Tactics and Trends in Cyber Extortion Campaigns',
           link: 'https://example.com',
         },
         {
-          title: 'title',
+          title:
+            'Decrypting the Threat: Navigating the Landscape of Ransomware Campaigns',
           link: 'https://example.com',
         },
         {
-          title: 'title',
+          title:
+            'Ransomware Resilience: Strategies for Businesses to Safeguard Against Digital Hostage-Taking',
+          link: 'https://example.com',
+        },
+      ],
+    },
+    {
+      category: 'Vulnerabilities',
+      news: [
+        {
+          title:
+            'Office in Peril: Uncovering the Latest Zero-Day Vulnerability Exploiting Business Suites',
+          link: 'https://example.com',
+        },
+        {
+          title:
+            'Beyond the Desk: Zeroing in on the Latest Office Software Breach',
+          link: 'https://example.com',
+        },
+        {
+          title:
+            'Excel at Risk: Navigating the Latest Zero-Day Vulnerabilities in Office Applications',
           link: 'https://example.com',
         },
       ],
