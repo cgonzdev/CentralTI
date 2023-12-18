@@ -51,6 +51,7 @@ a {
 }
 
 .fingerprint {
+  width: 80px;
   padding: 0 10px;
   transform: rotate(25deg);
 }
@@ -128,8 +129,16 @@ a {
     font-size: 20px;
   }
 
+  .fingerprint {
+    width: 60px;
+  }
+
   .logo > img {
     width: 120px;
+  }
+
+  .powered{
+    font-size: 8px;
   }
 
   .footer > .figures {
