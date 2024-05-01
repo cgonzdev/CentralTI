@@ -12,4 +12,7 @@ export const environment = {
     name: 'application name',
     description: 'application description',
   },
+  api: {
+    backend: 'http://central-ti-backend.app',
+  },
 };

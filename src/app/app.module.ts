@@ -11,6 +11,7 @@ import { AuthModule } from './pages/auth/auth.module';
 import { FlowBoardModule } from './pages/flowboard/flowboard.module';
 import { TemplatesModule } from './pages/templates/templates.module';
 import { ToolsModule } from './pages/tools/tools.module';
+import { InfoModule } from './pages/info/info.module';
 
 import { environment } from '../environments/environment';
 
@@ -24,6 +25,7 @@ import { environment } from '../environments/environment';
     FlowBoardModule,
     TemplatesModule,
     ToolsModule,
+    InfoModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
