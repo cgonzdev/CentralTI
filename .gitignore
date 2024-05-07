@@ -41,15 +41,21 @@ testem.log
 .DS_Store
 Thumbs.db
 
-
-# Own
+# Assets: Videos, Images, Documents, etc.
 src/assets
+
+# Personaliced components for info module
+src/app/pages/info/data/*
+src/app/pages/info/components/var/*
 
 # Firebase
 .firebase
 *-debug.log
 .runtimeconfig.json
 
-# environment variables file
+# Environment variables file
 src/environments/*
+
+# exceptions
+!src/app/pages/info/data/data.example.ts
 !src/environments/environment.example.ts

@@ -1,0 +1,20 @@
+<div class="p-3">
+  <h1 class="title text-center m-0 p-0">{{ title }}</h1>
+  <h2 class="subtitle text-center m-0 p-0">{{ subtitle }}</h2>
+</div>
+<p-timeline [value]="items" align="alternate" styleClass="customized-timeline">
+  <ng-template pTemplate="marker" let-item>
+    <span
+      class="flex w-2rem h-2rem align-items-center justify-content-center text-white border-circle z-1 shadow-1"
+    >
+      <img loading="lazy" [src]="'assets/image/' + item.icon" width="100%" [style]="{ 'color': item.color }">
+    </span>
+  </ng-template>
+  <ng-template pTemplate="content" let-item>
+    <p-card [header]="item.title" [subheader]="item.subtitle">
+      <p>
+          {{ item.text }}
+      </p>
+    </p-card>
+  </ng-template>
+</p-timeline>

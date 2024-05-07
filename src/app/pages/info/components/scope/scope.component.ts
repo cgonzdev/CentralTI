@@ -10,6 +10,8 @@ import { faAndroid, faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { ScopeService } from '../../services/scope.service';
 import { DockModel } from '../../models/scope.model';
 
+import { ScopeHomeComponent } from './home.component';
+
 @Component({
   selector: 'app-customers-scope',
   templateUrl: './scope.component.html',
@@ -31,7 +33,7 @@ export class ScopeComponent implements OnInit {
   constructor(private scopeService: ScopeService) {}
 
   ngOnInit(): void {
-    this.getAllCustomersScope();
+    this.getAllCustomersScopeLocal();
   }
 
   getAllCustomersScope() {
@@ -49,5 +51,16 @@ export class ScopeComponent implements OnInit {
         }));
       },
     });
+  }
+
+  getAllCustomersScopeLocal() {
+    this.customersScopes = this.scopeService.getAllCustomersScopeLocal();
+  }
+
+  servicesComponents(id: string) {
+    switch (id) {
+      default:
+        return ScopeHomeComponent;
+    }
   }
 }

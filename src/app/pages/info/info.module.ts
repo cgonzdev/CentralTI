@@ -6,15 +6,18 @@ import { TemplatesModule } from '../templates/templates.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { InfoRoutingModule } from './info-routing.module';
-import { ScopeComponent } from './components/customers/scope.component';
+import { ScopeComponent } from './components/scope/scope.component';
+import { ScopeHomeComponent } from './components/scope/home.component';
 
 import { CardModule } from 'primeng/card';
 import { AccordionModule } from 'primeng/accordion';
 import { DividerModule } from 'primeng/divider';
 import { DockModule } from 'primeng/dock';
+import { DropdownModule } from 'primeng/dropdown';
+import { TimelineModule } from 'primeng/timeline';
 
 @NgModule({
-  declarations: [ScopeComponent],
+  declarations: [ScopeComponent, ScopeHomeComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -26,6 +29,8 @@ import { DockModule } from 'primeng/dock';
     AccordionModule,
     DividerModule,
     DockModule,
+    DropdownModule,
+    TimelineModule,
   ],
 })
 export class InfoModule {}

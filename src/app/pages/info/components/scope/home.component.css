@@ -1,0 +1,23 @@
+.title {
+  font-size: 3em;
+  background: linear-gradient(to right, #ff9966, #ff5e62);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: color 1s ease-in-out;
+}
+
+.titulo:hover {
+  color: #ff5e62;
+}
+
+.subtitle {
+  font-size: 1.5em;
+  background: linear-gradient(to right, #66ccff, #00ccff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: color 1s ease-in-out;
+}
+
+.subtitle:hover {
+  color: #00ccff;
+}
