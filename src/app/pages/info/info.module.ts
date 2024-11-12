@@ -16,6 +16,8 @@ import { DockModule } from 'primeng/dock';
 import { DropdownModule } from 'primeng/dropdown';
 import { TimelineModule } from 'primeng/timeline';
 
+import { VarModule } from './var.module';
+
 @NgModule({
   declarations: [ScopeComponent, ScopeHomeComponent],
   imports: [
@@ -31,6 +33,7 @@ import { TimelineModule } from 'primeng/timeline';
     DockModule,
     DropdownModule,
     TimelineModule,
+    VarModule,
   ],
 })
 export class InfoModule {}

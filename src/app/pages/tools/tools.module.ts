@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TemplatesModule } from '../templates/templates.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { ToolsRoutingModule } from './tools-routing.module';
 import { GeneratorsComponent } from './components/generators/generators.component';
@@ -24,6 +25,7 @@ import { DividerModule } from 'primeng/divider';
     CommonModule,
     ReactiveFormsModule,
     ToolsRoutingModule,
+    FontAwesomeModule,
     TemplatesModule,
     CardModule,
     FieldsetModule,

@@ -10,14 +10,15 @@ import { faAndroid, faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { ScopeService } from '../../services/scope.service';
 import { DockModel } from '../../models/scope.model';
 
-import { ScopeHomeComponent } from './home.component';
+import { VarDefaultComponent } from '../var/default.component';
+import { variableComponents } from '../var/var';
 
 @Component({
   selector: 'app-customers-scope',
   templateUrl: './scope.component.html',
 })
 export class ScopeComponent implements OnInit {
-  customersScopes: any = [];
+  customersScopes: any = [{ name: 'Home', acronym: 'Home' }];
   customerScopeData: any = null;
   dockItems: DockModel[] = [];
 
@@ -54,13 +55,23 @@ export class ScopeComponent implements OnInit {
   }
 
   getAllCustomersScopeLocal() {
-    this.customersScopes = this.scopeService.getAllCustomersScopeLocal();
+    const scopesData = this.scopeService.getAllCustomersScopeLocal();
+    this.customersScopes = [...this.customersScopes, ...scopesData];
+  }
+
+  onChangeCustomeScope(event: any) {
+    if (!event || event.value.acronym === 'Home') {
+      this.customerScopeData = null;
+    } else {
+      this.customerScopeData = this.customersScopes.find(
+        (item: any) => item.acronym === event.value.acronym
+      );
+    }
   }
 
   servicesComponents(id: string) {
-    switch (id) {
-      default:
-        return ScopeHomeComponent;
-    }
+    const v = variableComponents.find((component) => component.id === id);
+    if (v) return v.component;
+    else return VarDefaultComponent;
   }
 }

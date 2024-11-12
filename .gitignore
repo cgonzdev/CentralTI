@@ -59,3 +59,6 @@ src/environments/*
 # exceptions
 !src/app/pages/info/data/data.example.ts
 !src/environments/environment.example.ts
+
+!src/app/pages/info/components/var/var.example.ts
+!src/app/pages/info/components/var/default.component.*

@@ -1,49 +1,58 @@
 <div class="card">
   <p-card>
     <div class="absolute top-0 right-0 m-5">
-      <p-dropdown [options]="customersScopes" optionLabel="acronym" [style]="{ minWidth: '120px' }" />
+      <p-dropdown
+        optionLabel="acronym"
+        [options]="customersScopes"
+        [style]="{ minWidth: '120px' }"
+        (onChange)="onChangeCustomeScope($event)"
+      />
     </div>
-    <div *ngIf="true">
-      <app-info-scope-home></app-info-scope-home>
-    </div>
-    <div *ngIf="customerScopeData">
-      <div class="text-center mb-3">
-        <img [src]="customerScopeData.logo" [alt]="customerScopeData.acronym" width="120px">
-        <h1 class="m-1">{{ customerScopeData.name }}</h1>
+    @if (!customerScopeData) {
+      <div>
+        <app-info-scope-home></app-info-scope-home>
       </div>
-      <div class="grid p-fluid">
-        <div class="p-2 col-12 md:col-6">
-          <h4>Owner</h4>
-          <span class="block text-base font-semibold font-italic text-cyan-600 text-left">{{ customerScopeData.owner }}</span>
+    }
+    @else {
+      <div>
+        <div class="text-center mb-3">
+          <img [src]="customerScopeData.logo" [alt]="customerScopeData.acronym" width="120px">
+          <h1 class="m-1">{{ customerScopeData.name }}</h1>
         </div>
-        <div class="p-2 col-12 md:col-6">
-          <h4>Leaders</h4>
-          @for (leader of customerScopeData.leaders; track leader.name;) {
-            <span class="block text-base font-semibold font-italic text-cyan-600 text-left">{{ leader.name }} <{{ leader.email}}></span>
-          }
-        </div>
-      </div>
-      <div class="my-3 py-2">
-        <h2 class="text-center">Services</h2>
         <div class="grid p-fluid">
-          @for (service of customerScopeData.services; track service.id;) {
-            <div class="p-2 col-12 md:col-6">
-              <p-accordion>
-                <p-accordionTab>
-                  <ng-template pTemplate="header">
-                    <div [class]="service.enabled ? 'text-primary-500' : 'text-red-500'">
-                      <fa-icon [icon]="icons[service.icon]" class="mr-2"></fa-icon>
-                      <span>{{ service.name }}</span>
-                    </div>
-                  </ng-template>
-                  <span class="block text-justify">{{ service.description }}</span>
-                  <ng-container *ngComponentOutlet="servicesComponents(service.id)"></ng-container>
-                </p-accordionTab>
-              </p-accordion>
-            </div>
-          }
+          <div class="p-2 col-12 md:col-6">
+            <h4>Owner</h4>
+            <span class="block text-base font-semibold font-italic text-cyan-600 text-left">{{ customerScopeData.owner }}</span>
+          </div>
+          <div class="p-2 col-12 md:col-6">
+            <h4>Leaders</h4>
+            @for (leader of customerScopeData.leaders; track leader.name;) {
+              <span class="block text-base font-semibold font-italic text-cyan-600 text-left">{{ leader.name }} <{{ leader.email}}></span>
+            }
+          </div>
+        </div>
+        <div class="my-3 py-2">
+          <h2 class="text-center">Services</h2>
+          <div class="grid p-fluid">
+            @for (service of customerScopeData.services; track service.id;) {
+              <div class="p-2 col-12 md:col-6">
+                <p-accordion>
+                  <p-accordionTab>
+                    <ng-template pTemplate="header">
+                      <div [class]="service.enabled ? 'text-primary-500' : 'text-red-500'">
+                        <fa-icon [icon]="icons[service.icon]" class="mr-2"></fa-icon>
+                        <span>{{ service.name }}</span>
+                      </div>
+                    </ng-template>
+                    <span class="block text-justify">{{ service.description }}</span>
+                    <ng-container *ngComponentOutlet="servicesComponents(customerScopeData.acronym + '-' + service.id)"></ng-container>
+                  </p-accordionTab>
+                </p-accordion>
+              </div>
+            }
+          </div>
         </div>
       </div>
-    </div>
+    }
   </p-card>
 </div>
